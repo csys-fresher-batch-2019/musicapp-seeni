@@ -42,7 +42,7 @@ public class msg91{
             }
             catch (IOException e)
             {
-                    e.printStackTrace();
+                    Logger.error(e.getMessage());
             }
             return message;
         }
