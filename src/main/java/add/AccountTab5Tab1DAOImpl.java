@@ -12,10 +12,9 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 		List<String> li=null;
 		ResultSet rs=null;
 
-			Class.forName("oracle.jdbc.driver.OracleDriver");
 			int premiumAmount=400;
 			String sql="select username from userlogin where user_id in (select user_id from account_info where wants_to_premium=? and balance>="+premiumAmount+")";
-			try(Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");PreparedStatement pst=con.prepareStatement(sql);)
+			try(Connection con=Connection1.connection();PreparedStatement pst=con.prepareStatement(sql);)
 			{
 			System.out.println(sql);
 			pst.setString(1, str);

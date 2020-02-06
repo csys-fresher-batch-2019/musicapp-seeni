@@ -9,8 +9,7 @@ import java.util.List;
 
 public class SelectByLikeTab2DAOImpl implements SelectByLikeTab2DAO{
 	public String selectByLikeKey(String str) throws Exception {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
+		Connection con=Connection1.connection();
 		String sql="select song_name from song_list where song_name like ?";
 		System.out.println(sql);
 		PreparedStatement pst =con.prepareStatement(sql);

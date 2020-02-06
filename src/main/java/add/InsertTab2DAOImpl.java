@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 public class InsertTab2DAOImpl implements InsertTab2DAO{
 	public void insertSong(SongList songList) throws Exception {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
+		Connection con=Connection1.connection();
 		String sql ="insert into song_list(song_number,song_name,music_director,lyricist,singers,movie_name) "
 				+ "values(?,?,?,?,?,?)";
 		PreparedStatement pst=con.prepareStatement(sql);

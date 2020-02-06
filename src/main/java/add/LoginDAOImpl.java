@@ -7,8 +7,7 @@ import java.sql.ResultSet;
 
 public class LoginDAOImpl implements LoginDAO{
 	public boolean login(String email,String pass) throws Exception {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
+		Connection con=Connection1.connection();
 		String sql="select email_id,password from userlogin where email_id=? and password=?";
 		PreparedStatement pst=con.prepareStatement(sql);
 		pst.setString(1, email);

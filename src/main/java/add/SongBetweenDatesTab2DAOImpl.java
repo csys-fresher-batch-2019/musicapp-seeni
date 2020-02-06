@@ -12,9 +12,8 @@ public class SongBetweenDatesTab2DAOImpl implements SongBetweenDatesTab2DAO{
 	
 public List<String> selectSongs(int releaseYearLd,int upto) throws Exception{
 		
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
-		String sql="select song_name from song_list where song_number in (select song_number from year where release_year between ? and ?)";
+	Connection con=Connection1.connection();
+	String sql="select song_name from song_list where song_number in (select song_number from year where release_year between ? and ?)";
 		System.out.println(sql);
 		PreparedStatement pst=con.prepareStatement(sql);
 		pst.setInt(1, releaseYearLd);

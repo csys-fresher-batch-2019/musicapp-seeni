@@ -10,8 +10,7 @@ import java.util.Scanner;
 public class ForgotPasswordTab1DAOImpl implements ForgotPasswordTab1DAO{
 	
 	public String passwordChange(String emailId) throws Exception {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
+		Connection con=Connection1.connection();
 		String sql="select password from userlogin where email_id=?";
 		System.out.println(sql);
 		PreparedStatement pst=con.prepareStatement(sql);

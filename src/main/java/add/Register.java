@@ -7,9 +7,7 @@ import java.util.Scanner;
 
 public class Register {
 	public boolean register(Userlogin a) throws Exception {
-		
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
+		Connection con=Connection1.connection();
 		String sql="insert into userlogin(user_id,username,email_id,password,mobile_no) values("+a.getUserId()+",'"+a.getUserName()+"','"+a.getEmailId()+"','"+a.getPassword()+"',"+a.getMobileNo()+")";
 		boolean insertion=true;
 		if (insertion) {

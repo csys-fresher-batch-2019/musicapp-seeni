@@ -7,9 +7,7 @@ import java.util.Scanner;
 
 public class DeleteTab2DAOImpl implements DeleteTab2DAO {
 	public void delRow(int sno) throws Exception {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
-		String sql="delete song_list where song_number=?";
+		Connection con=Connection1.connection();String sql="delete song_list where song_number=?";
 		System.out.println(sql);
 		PreparedStatement pst=con.prepareStatement(sql);
 		pst.setInt(1, sno);

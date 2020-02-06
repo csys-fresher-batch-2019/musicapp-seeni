@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 public class UpdateTab1DAOImpl implements UpdateTab1DAO{
 		public void updatePhoneNo(long phNo,int userid) throws Exception{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
+			Connection con=Connection1.connection();
 			String sql="update userlogin set mobile_no=? where user_id=?";
 			PreparedStatement pst=con.prepareStatement(sql);
 			pst.setLong(1, phNo);
