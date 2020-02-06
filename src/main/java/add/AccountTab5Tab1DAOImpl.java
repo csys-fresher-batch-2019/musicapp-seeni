@@ -30,7 +30,7 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		rs.close();
+		
 		return li;
 		
 	}
