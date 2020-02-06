@@ -33,6 +33,7 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 		}finally {
 			try {
 				if(con!=null) {
+					pst.close();
 					con.close();
 				}
 			}catch(Exception e){
