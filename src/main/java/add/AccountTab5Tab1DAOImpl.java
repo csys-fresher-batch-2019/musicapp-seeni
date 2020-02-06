@@ -36,7 +36,7 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 					con.close();
 				}
 			}catch(Exception e){
-				throw new Exception("Invald input");
+				
 			}
 		}
 		return li;
