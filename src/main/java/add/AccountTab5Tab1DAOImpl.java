@@ -28,7 +28,7 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 				System.out.println(string);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.error(e.getMessage());
 		}
 		
 		return li;
