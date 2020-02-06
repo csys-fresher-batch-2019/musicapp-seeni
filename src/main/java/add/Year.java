@@ -5,13 +5,13 @@ import java.time.LocalDate;
 
 public class Year {
 	
-	public int songNumber;
-	public Date songReleasedDate;
-	public String songTone;
-	public int songDurationInSeconds;
-	public int songSizeInMB;
-	public String songLang;
-	public Date downloadDate;
+	private int songNumber;
+	private Date songReleasedDate;
+	private String songTone;
+	private int songDurationInSeconds;
+	private int songSizeInMB;
+	private String songLang;
+	private Date downloadDate;
 	
 	@Override
 	public String toString() {
