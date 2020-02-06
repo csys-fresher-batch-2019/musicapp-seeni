@@ -1,7 +1,7 @@
 package add;
 
 public class AccountInfo {
-	public String wantsToPrem;
+	String wantsToPrem;
 	public long accountNo;
 	public int userId;
 	public int balance;
