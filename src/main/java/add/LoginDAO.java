@@ -1,5 +1,7 @@
 package add;
 
+import java.sql.SQLException;
+
 public interface LoginDAO {
-	public boolean login(String email,String pass) throws Exception;
+	public boolean login(String email,String pass)  throws ClassNotFoundException, SQLException;
 }

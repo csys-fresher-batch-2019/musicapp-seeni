@@ -36,16 +36,19 @@ public class Userlogin{
 	public void setMobileNo(Long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
+	
+	
+	
 	@Override
 	public String toString() {
-		return "Userlogin [user_id=" + userId + ", userName=" + userName + ", email_id=" + emailId + ", password="
+		return "Userlogin [userId=" + userId + ", userName=" + userName + ", emailId=" + emailId + ", password="
 				+ password + ", mobileNo=" + mobileNo + "]";
 	}
-	public Userlogin(int userId, String userName, String email_id, String password, Long mobileNo) {
+	public Userlogin(int userId, String userName, String emailId, String password, Long mobileNo) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
-		this.emailId = email_id;
+		this.emailId = emailId;
 		this.password = password;
 		this.mobileNo = mobileNo;
 	}

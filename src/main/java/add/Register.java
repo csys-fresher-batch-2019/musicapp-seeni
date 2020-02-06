@@ -1,9 +1,7 @@
 package add;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
-import java.util.Scanner;
 
 public class Register {
 	public boolean register(Userlogin a) throws Exception {
@@ -13,7 +11,7 @@ public class Register {
 		if (insertion) {
 			Statement st = con.createStatement();
 			int row = st.executeUpdate(sql);
-			Logger.Info("Number of rows inserted " + row);
+			Logger.info("Number of rows inserted " + row);
 			return true;
 		}else {
 			return false;

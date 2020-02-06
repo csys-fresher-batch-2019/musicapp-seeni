@@ -1,7 +1,5 @@
 package add;
 
-import java.util.Scanner;
-
 public class SongList{
 	private int songNumber;
 	private String songName;

@@ -2,10 +2,12 @@ package add;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.util.Random;
 
-public class msg91{
+public class Msg91{
+		private Msg91(){
+			
+		}
         public static int msg()
     	{
             String authkey = "243477AVOV0jN2Q5bc967d9";
@@ -35,7 +37,7 @@ public class msg91{
                 reader= new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()));
                 String response;
                 while ((response = reader.readLine()) != null)
-                Logger.Info(response);
+                	Logger.info(response);
                 reader.close();
             }
             catch (IOException e)

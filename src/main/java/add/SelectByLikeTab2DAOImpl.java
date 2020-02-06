@@ -1,17 +1,17 @@
 package add;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SelectByLikeTab2DAOImpl implements SelectByLikeTab2DAO{
-	public String selectByLikeKey(String str) throws Exception {
+	public List<String> selectByLikeKey(String str)  throws ClassNotFoundException, SQLException{
 		Connection con=Connection1.connection();
 		String sql="select song_name from song_list where song_name like ?";
-		Logger.Info(sql);
+		Logger.info(sql);
 		PreparedStatement pst =con.prepareStatement(sql);
 		pst.setString(1, str);
 		ResultSet rs=pst.executeQuery();
@@ -21,8 +21,8 @@ public class SelectByLikeTab2DAOImpl implements SelectByLikeTab2DAO{
 			
 		}
 		for (String string : li) {
-			Logger.Info(string);
+			Logger.info(string);
 		}
-		return sql;
+		return li;
 	}
 }

@@ -1,20 +1,19 @@
 package add;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.time.LocalDate;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SongBetweenDatesTab2DAOImpl implements SongBetweenDatesTab2DAO{
 	
-public List<String> selectSongs(int releaseYearLd,int upto) throws Exception{
+public List<String> selectSongs(int releaseYearLd,int upto)  throws ClassNotFoundException, SQLException{
 		
 	Connection con=Connection1.connection();
 	String sql="select song_name from song_list where song_number in (select song_number from year where release_year between ? and ?)";
-		Logger.Info(sql);
+		Logger.info(sql);
 		PreparedStatement pst=con.prepareStatement(sql);
 		pst.setInt(1, releaseYearLd);
 		pst.setInt(2, upto);
@@ -24,14 +23,11 @@ public List<String> selectSongs(int releaseYearLd,int upto) throws Exception{
 			li.add(rs.getString("song_name"));
 		}
 		for (String string : li) {
-			Logger.Info(string);
+			Logger.info(string);
 		}
 		return li;
 		
 	}
 
-public List<String> selectSongs(LocalDate releaseDateLd, LocalDate upto) throws Exception {
-	// TODO Auto-generated method stub
-	return null;
-}
+
 }

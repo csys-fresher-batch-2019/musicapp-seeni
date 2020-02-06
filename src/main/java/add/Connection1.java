@@ -2,11 +2,15 @@ package add;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Connection1 {
-	public static Connection connection() throws Exception{
+	private Connection1(){
+		
+	}
+	public static Connection connection() throws SQLException, ClassNotFoundException{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
-		return con;
+		return DriverManager.getConnection("jdbc:oracle:thin:@CSLH2013:1521:XE", "system", "oracle");
+		
 	}
 }

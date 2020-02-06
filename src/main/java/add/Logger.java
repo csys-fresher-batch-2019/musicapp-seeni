@@ -1,11 +1,11 @@
 package add;
 
 public class Logger {
-	/*public static Logger getInstanceOf() {
-		Logger logger =new Logger();
-		return logger;
-	}*/
-	public static void Info(Object message) {
+	
+	private Logger() {
+		
+	}
+	public static void info(Object message) {
 		System.out.println(message);
 	}
 	public static void warn(Object message) {
