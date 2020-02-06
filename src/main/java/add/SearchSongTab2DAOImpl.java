@@ -13,11 +13,11 @@ public class SearchSongTab2DAOImpl implements SearchSongTab2DAO{
 		String sql="select song_name from song_list";
 		PreparedStatement pst=con.prepareStatement(sql);
 		ResultSet rs=pst.executeQuery();
-		System.out.println(sql);
+		Logger.Info(sql);
 		ArrayList<String> arli=new ArrayList<String>();
 		while(rs.next()) {
 			arli.add(rs.getString("song_name"));
-		}System.out.println(arli);
+		}Logger.Info(arli);
 		return arli;
 	}
 

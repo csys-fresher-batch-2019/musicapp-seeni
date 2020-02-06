@@ -14,7 +14,7 @@ public List<String> selectSongs(int releaseYearLd,int upto) throws Exception{
 		
 	Connection con=Connection1.connection();
 	String sql="select song_name from song_list where song_number in (select song_number from year where release_year between ? and ?)";
-		System.out.println(sql);
+		Logger.Info(sql);
 		PreparedStatement pst=con.prepareStatement(sql);
 		pst.setInt(1, releaseYearLd);
 		pst.setInt(2, upto);
@@ -24,7 +24,7 @@ public List<String> selectSongs(int releaseYearLd,int upto) throws Exception{
 			li.add(rs.getString("song_name"));
 		}
 		for (String string : li) {
-			System.out.println(string);
+			Logger.Info(string);
 		}
 		return li;
 		

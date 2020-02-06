@@ -11,7 +11,7 @@ public class SelectByLikeTab2DAOImpl implements SelectByLikeTab2DAO{
 	public String selectByLikeKey(String str) throws Exception {
 		Connection con=Connection1.connection();
 		String sql="select song_name from song_list where song_name like ?";
-		System.out.println(sql);
+		Logger.Info(sql);
 		PreparedStatement pst =con.prepareStatement(sql);
 		pst.setString(1, str);
 		ResultSet rs=pst.executeQuery();
@@ -21,7 +21,7 @@ public class SelectByLikeTab2DAOImpl implements SelectByLikeTab2DAO{
 			
 		}
 		for (String string : li) {
-			System.out.println(string);
+			Logger.Info(string);
 		}
 		return sql;
 	}

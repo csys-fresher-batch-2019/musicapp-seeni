@@ -18,8 +18,6 @@ public class msg91{
             URLConnection myURLConnection=null;
             URL myURL=null;
             BufferedReader reader=null;
-            //String encoded_message=URLEncoder.encode(message);
-           //System.out.println(encoded_message);
             String mainUrl="https://api.msg91.com/api/v2/sendsms?";
             StringBuilder sbPostData= new StringBuilder(mainUrl);
             sbPostData.append("authkey="+authkey);
@@ -37,7 +35,7 @@ public class msg91{
                 reader= new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()));
                 String response;
                 while ((response = reader.readLine()) != null)
-                System.out.println(response);
+                Logger.Info(response);
                 reader.close();
             }
             catch (IOException e)

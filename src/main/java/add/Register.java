@@ -13,7 +13,7 @@ public class Register {
 		if (insertion) {
 			Statement st = con.createStatement();
 			int row = st.executeUpdate(sql);
-			System.out.println("Number of rows inserted " + row);
+			Logger.Info("Number of rows inserted " + row);
 			return true;
 		}else {
 			return false;

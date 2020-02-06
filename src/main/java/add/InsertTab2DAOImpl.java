@@ -14,35 +14,35 @@ public class InsertTab2DAOImpl implements InsertTab2DAO{
 		PreparedStatement pst=con.prepareStatement(sql);
 		songList=new SongList();
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter song number ");
+		Logger.Info("Enter song number ");
 		int number=sc.nextInt();
 		sc.nextLine();
 		songList.setSongNumber(number);
 		pst.setInt(1,songList.getSongNumber());
-		System.out.println("Enter song name ");
+		Logger.Info("Enter song name ");
 		String sname=sc.nextLine();
 		songList.setSongName(sname);
 		pst.setString(2, songList.getSongName());
-		System.out.println("Enter music director");
+		Logger.Info("Enter music director");
 		String mdir=sc.nextLine();
 		songList.setMusicDirector(mdir);
 		pst.setString(3, songList.getMusicDirector());
-		System.out.println("Enter Lyricist name ");
+		Logger.Info("Enter Lyricist name ");
 		String lyricist=sc.nextLine();
 		songList.setLyricist(lyricist);
 		pst.setString(4, songList.getLyricist());
-		System.out.println("Enter singers name ");
+		Logger.Info("Enter singers name ");
 		String singers=sc.nextLine();
 		songList.setSingers(singers);;
 		pst.setString(5, songList.getSingers());
-		System.out.println("Enter movie name ");
+		Logger.Info("Enter movie name ");
 		String mname=sc.nextLine();
 		songList.setMovieName(mname);
 		pst.setString(6, songList.getMovieName());
 		int rows=pst.executeUpdate();
 		pst.close();
-		System.out.println(sql);
-		System.out.println("No.of Rows Inserted = "+rows);
+		Logger.Info(sql);
+		Logger.Info("No.of Rows Inserted = "+rows);
 	}
 
 }
