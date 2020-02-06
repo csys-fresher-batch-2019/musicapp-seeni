@@ -5,9 +5,7 @@ import java.net.URLConnection;
 import java.util.Random;
 
 public class Msg91{
-		private Msg91(){
-			
-		}
+		
         public static int msg()
     	{
             String authkey = "243477AVOV0jN2Q5bc967d9";
