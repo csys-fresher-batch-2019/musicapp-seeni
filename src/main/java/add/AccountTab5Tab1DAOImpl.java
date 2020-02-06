@@ -11,11 +11,12 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 	public List<String> accountInfo(String str) throws Exception{
 		List<String> li=null;
 		ResultSet rs=null;
-
+		Connection con=null;
 			int premiumAmount=400;
 			String sql="select username from userlogin where user_id in (select user_id from account_info where wants_to_premium=? and balance>="+premiumAmount+")";
-			try(Connection con=Connection1.connection())
+			try
 			{
+			con=Connection1.connection();
 			System.out.println(sql);
 			PreparedStatement pst=con.prepareStatement(sql);
 			pst.setString(1, str);
@@ -27,13 +28,13 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 			for (String string : li) {
 				System.out.println(string);
 			}pst.close();
-			con.close();
 		} catch (Exception e) {
 			Logger.error(e.getMessage());
+		}finally {
+			if(con!=null) {
+				con.close();
+			}
 		}
-		
 		return li;
-		
 	}
-	
 }
