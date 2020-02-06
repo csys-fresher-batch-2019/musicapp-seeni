@@ -1,13 +1,61 @@
 package add;
 
 public class AccountInfo {
-	public String wantsToPrem;
-	public long accountNo;
-	public int userId;
-	public int balance;
-	public String premium;
-	public int premiumBal;
+	private String wantsToPrem;
+	private long accountNo;
+	private int userId;
+	private int balance;
+	private String premium;
+	private int premiumBal;
 	
+	public String getWantsToPrem() {
+		return wantsToPrem;
+	}
+
+	public void setWantsToPrem(String wantsToPrem) {
+		this.wantsToPrem = wantsToPrem;
+	}
+
+	public long getAccountNo() {
+		return accountNo;
+	}
+
+	public void setAccountNo(long accountNo) {
+		this.accountNo = accountNo;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	public String getPremium() {
+		return premium;
+	}
+
+	public void setPremium(String premium) {
+		this.premium = premium;
+	}
+
+	public int getPremiumBal() {
+		return premiumBal;
+	}
+
+	public void setPremiumBal(int premiumBal) {
+		this.premiumBal = premiumBal;
+	}
+
 	@Override
 	public String toString() {
 		return "AccountInfo [wantsToPrem=" + wantsToPrem + ", accountNo=" + accountNo + ", userId=" + userId
