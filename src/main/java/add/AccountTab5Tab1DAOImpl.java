@@ -14,9 +14,10 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 
 			int premiumAmount=400;
 			String sql="select username from userlogin where user_id in (select user_id from account_info where wants_to_premium=? and balance>="+premiumAmount+")";
-			try(Connection con=Connection1.connection();PreparedStatement pst=con.prepareStatement(sql);)
+			try(Connection con=Connection1.connection();)
 			{
 			System.out.println(sql);
+			PreparedStatement pst=con.prepareStatement(sql);
 			pst.setString(1, str);
 			rs=pst.executeQuery();
 			li = new ArrayList<String>();
