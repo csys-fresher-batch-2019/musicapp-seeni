@@ -11,7 +11,6 @@ public class InsertTab2DAOImpl implements InsertTab2DAO{
 		String sql ="insert into song_list(song_number,song_name,music_director,lyricist,singers,movie_name) "
 				+ "values(?,?,?,?,?,?)";
 		PreparedStatement pst=con.prepareStatement(sql);
-		sl=new SongList();
 		Scanner sc=new Scanner(System.in);
 		Logger.info("Enter song number ");
 		int number=sc.nextInt();
