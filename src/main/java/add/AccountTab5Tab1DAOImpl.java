@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
-	public List<Object> accountInfo(String str){
-		List<Object> li=null;
+	public List<String> accountInfo(String str){
+		List<String> li=null;
 			int premiumAmount=400;
 			String sql="select username from userlogin where user_id in (select user_id from account_info where wants_to_premium=? and balance>="+premiumAmount+")";
 			try(Connection con=Connection1.connection();
@@ -17,8 +17,8 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 			{
 			Logger.info(sql);
 			pst.setString(1, str);
-				li = nestTry(li, pst);
-			for (Object string : li) {
+				li = nestTry( pst);
+			for (String string : li) {
 				Logger.info(string);
 			}
 		} catch (Exception e) {
@@ -27,9 +27,10 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 		return li;
 	}
 
-	private List<Object> nestTry(List<Object> li, PreparedStatement pst) {
+	private List<String> nestTry( PreparedStatement pst) {
+		List<String> li =  new ArrayList<>();
 		try(ResultSet rs=pst.executeQuery();){
-		li = new ArrayList<Object>();
+		li = new ArrayList<String>();
 		while(rs.next()) {
 			li.add(rs.getString("username"));
 		}

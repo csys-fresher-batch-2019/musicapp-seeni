@@ -18,7 +18,7 @@ public class SearchSongTab2DAOImpl implements SearchSongTab2DAO{
 		List<String> arli=new ArrayList<String>();
 		while(rs.next()) {
 			arli.add(rs.getString("song_name"));
-		}Logger.info(arli);
+		}
 		return arli;
 	}
 
