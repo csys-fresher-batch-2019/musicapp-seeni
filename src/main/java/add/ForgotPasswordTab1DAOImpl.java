@@ -11,10 +11,12 @@ public class ForgotPasswordTab1DAOImpl implements ForgotPasswordTab1DAO{
 	private static final String incorrectPwd="Incorrect password";
 	
 	public String pwdChange(String emailId) throws SQLException, ClassNotFoundException {
-		Connection con=Connection1.connection();
+		
 		String sql="select password from userlogin where email_id=?";
 		Logger.info(sql);
-		PreparedStatement pst=con.prepareStatement(sql);
+		try(Connection con=Connection1.connection();
+				PreparedStatement pst=con.prepareStatement(sql);){
+		
 		pst.setString(1, emailId);
 		ResultSet rs=pst.executeQuery();
 		String str="";
@@ -108,6 +110,9 @@ public class ForgotPasswordTab1DAOImpl implements ForgotPasswordTab1DAO{
 						}
 				}break;
 			}
+		}catch(Exception e) {
+				Logger.error(e);
+		}
 		return sql;
 	}
 }
