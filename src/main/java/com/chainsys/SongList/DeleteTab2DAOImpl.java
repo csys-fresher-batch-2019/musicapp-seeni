@@ -1,10 +1,12 @@
-package add;
+package com.chainsys.SongList;
 
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
+
+import add.*;
 
 public class DeleteTab2DAOImpl implements DeleteTab2DAO {
 	public void delRow(int sno) throws SQLException, ClassNotFoundException {

@@ -1,21 +1,25 @@
 package add;
 
+
 public class SongList{
-	private int songNumber;
 	private String songName;
 	private String musicDirector;
 	private String lyricist;
 	private String singers;
 	private String movieName;
+	private String songLink;
 	
 
-	public int getSongNumber() {
-		return songNumber;
+	public String getSongLink() {
+		return songLink;
 	}
 
 
-	public void setSongNumber(int songNumber) {
-		this.songNumber = songNumber;
+	public void setSongLink(String songLink) {
+		boolean b=nullOrNot(songLink);
+		if(b) {
+			this.songLink = songLink;
+		}
 	}
 
 
@@ -25,7 +29,11 @@ public class SongList{
 
 
 	public void setSongName(String songName) {
-		this.songName = songName;
+		//boolean b=spellCheck(songName);
+		boolean n=nullOrNot(songName);
+		if( n) {
+			this.songName=songName;
+		}
 	}
 
 
@@ -35,7 +43,11 @@ public class SongList{
 
 
 	public void setMusicDirector(String musicDirector) {
-		this.musicDirector = musicDirector;
+		//boolean b=spellCheck(musicDirector);
+		boolean n=nullOrNot(musicDirector);
+		if( n) {
+			this.musicDirector=musicDirector;
+		}
 	}
 
 
@@ -45,7 +57,11 @@ public class SongList{
 
 
 	public void setLyricist(String lyricist) {
-		this.lyricist = lyricist;
+		//boolean b=spellCheck(lyricist);
+		boolean n=nullOrNot(lyricist);
+		if( n) {
+			this.lyricist=lyricist;
+		}
 	}
 
 
@@ -55,7 +71,11 @@ public class SongList{
 
 
 	public void setSingers(String singers) {
-		this.singers = singers;
+		//boolean b=spellCheck(singers);
+		boolean n=nullOrNot(singers);
+		if( n) {
+			this.singers=singers;
+		}
 	}
 
 
@@ -65,14 +85,49 @@ public class SongList{
 
 
 	public void setMovieName(String movieName) {
-		this.movieName = movieName;
+		//boolean b=spellCheck(movieName);
+		boolean n=nullOrNot(movieName);
+		if( n) {
+			this.movieName=movieName;
+		}
 	}
 	
 
 	@Override
 	public String toString() {
 		
-		return "SongList [songNumber=" + songNumber + ", songName=" + songName + ", musicDirector=" + musicDirector
+		return "SongList [ songName=" + songName + ", musicDirector=" + musicDirector
 				+ ", lyricist=" + lyricist + ", singers=" + singers + ", movieName=" + movieName + "]";
+	}
+	/*public static boolean spellCheck(String nameCheck) {
+		String str=nameCheck;
+		char[] ch=str.toCharArray();
+		String s="";
+		for (char c : ch) {
+			if((c==(char)(32))) {
+				s=s+c;
+			}
+			for (int i=65;i<122;i++) {
+				if(i==91||i==92||1==93||i==94||i==95||i==96) {
+					continue;
+				}
+				else if(c==(char)(i)) {
+					s=s+c;
+				}
+			}
+		}if(s.equals(str)) {
+			return true;
+		}else {
+			Logger.error(ErrorConstants.checkInput);
+			return false;
+		}
+	}*/public static boolean nullOrNot(String name) {
+		
+		if(name.equals("")) {
+			Logger.info(ErrorConstants.checkInput);
+			return false;
+		}else {
+			return true;
+		}
 	}
 }

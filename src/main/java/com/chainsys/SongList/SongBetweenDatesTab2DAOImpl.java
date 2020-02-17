@@ -1,4 +1,4 @@
-package add;
+package com.chainsys.SongList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import add.*;
 
 public class SongBetweenDatesTab2DAOImpl implements SongBetweenDatesTab2DAO{
 	
@@ -24,6 +25,8 @@ public List<String> selectSongs(int releaseYearLd,int upto)  throws ClassNotFoun
 		}
 		for (String string : li) {
 			Logger.info(string);
+		}if(releaseYearLd>upto) {
+			Logger.info("Invalid year");
 		}
 		return li;
 		

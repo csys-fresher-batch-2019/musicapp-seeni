@@ -1,9 +1,11 @@
-package add;
+package com.chainsys.UserLogin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import add.*;
 
 public class LoginDAOImpl implements LoginDAO{
 	public boolean login(String email,String pass) throws ClassNotFoundException, SQLException {

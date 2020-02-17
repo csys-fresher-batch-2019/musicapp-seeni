@@ -5,10 +5,10 @@ import java.net.URLConnection;
 import java.util.Random;
 
 public class Msg91{
-		public static int msg()
+		public static int msg(String number)
     	{
-            String authkey = "243477AVOV0jN2Q5bc967d9";
-            String mobiles = "6379434293";
+            String authkey = "316211AGvuCbSI5e35af47P1";
+            String mobiles = number;
             String senderId = "SEENII";
             String country = "91";
             Random rand=new Random();

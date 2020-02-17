@@ -1,7 +1,8 @@
-package add;
+package com.chainsys.AccountInfo;
 
 
 import java.sql.Connection;
+import add.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
