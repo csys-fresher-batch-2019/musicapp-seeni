@@ -20,25 +20,20 @@ public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 			{
 			Logger.info(sql);
 			pst.setString(1, str);
-				li = nestTry(pst);
+			li =  new ArrayList<>();
+			try(ResultSet rs=pst.executeQuery();){
+			li = new ArrayList<String>();
+			while(rs.next()) {
+				li.add(rs.getString("username"));
+			}
+			}catch(Exception e) {
+			Logger.error(e);
+			}
 			for (String string : li) {
 				Logger.info(string);
 			}
 		} catch (Exception e) {
 			Logger.error(e.getMessage());
-		}
-		return li;
-	}
-
-	private List<String> nestTry( PreparedStatement pst) {
-		List<String> li =  new ArrayList<>();
-		try(ResultSet rs=pst.executeQuery();){
-		li = new ArrayList<String>();
-		while(rs.next()) {
-			li.add(rs.getString("username"));
-		}
-		}catch(Exception e) {
-		Logger.error(e);
 		}
 		return li;
 	}
