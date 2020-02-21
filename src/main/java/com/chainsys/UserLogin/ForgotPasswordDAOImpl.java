@@ -8,6 +8,7 @@ import java.util.Random;
 import com.chainsys.OtherClass.Connection1;
 
 public class ForgotPasswordDAOImpl implements ForgotPasswordTab1DAO {
+	Random rand=new Random();
 	public String pwdChange(String emailId) throws SQLException, ClassNotFoundException {
 		String characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 		String sql="update userlogin set password=? where email_id=?";
@@ -16,7 +17,6 @@ public class ForgotPasswordDAOImpl implements ForgotPasswordTab1DAO {
 		String[] ch=characters.split("");
 		String u="";
 		for(int i=0;i<7;i++) {
-			Random rand=new Random();
 			int p=rand.nextInt(14);
 			int k=i*p;
 			if(k<=characters.length()) {

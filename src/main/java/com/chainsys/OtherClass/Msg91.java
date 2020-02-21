@@ -6,13 +6,14 @@ import java.net.URLEncoder;
 import java.util.Random;
 
 public class Msg91{
+	 static Random rand=new Random();
         public static int msg()
     	{
             String authkey = "243477AVOV0jN2Q5bc967d9";
             String mobiles = "6379434293";
             String senderId = "SEENII";
             String country = "91";
-            Random rand=new Random();
+            
             int message=rand.nextInt(99999);
             String route="4";
             URLConnection myURLConnection=null;
