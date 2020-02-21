@@ -7,9 +7,11 @@ import com.chainsys.OtherClass.Connection1;
 
 public class UpdateTab1DAOImpl implements UpdateTab1DAO{
 		public boolean updatePhoneNo(long phNo,String email)  throws ClassNotFoundException, SQLException{
-			Connection con=Connection1.connection();
 			String sql="update userlogin set mobile_no=? where email_id=?";
-			PreparedStatement pst=con.prepareStatement(sql);
+			try(Connection con=Connection1.connection();
+					PreparedStatement pst=con.prepareStatement(sql);){
+			
+			
 			pst.setLong(1, phNo);
 			pst.setString(2, email);
 			int rows=pst.executeUpdate();
@@ -18,5 +20,5 @@ public class UpdateTab1DAOImpl implements UpdateTab1DAO{
 		con.close();
 		return true;
 	}
-
+		}
 }

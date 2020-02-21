@@ -3,8 +3,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-
 public class Register{
 	public  boolean register(Userlogin ul) throws ClassNotFoundException, SQLException {
 		Connection con=Connection1.connection();
@@ -14,11 +12,11 @@ public class Register{
 			Statement st=con.createStatement();
 			int row=st.executeUpdate(sql);
 			Logger.info(row);
-			return true;
+			sql1=true;
 		}
 		else {
-			return false;
-		}
+			sql1=false;
+		}return sql1;
 	}
 }
 

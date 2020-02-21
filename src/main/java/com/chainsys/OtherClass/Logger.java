@@ -2,9 +2,7 @@ package com.chainsys.OtherClass;
 
 public class Logger {
 	
-	private Logger() {
-		
-	}
+	
 	public static void info(Object message) {
 		System.out.println(message);
 	}
