@@ -11,12 +11,13 @@ public class LoginDAOImpl implements LoginDAO{
 	public boolean login(String email,String pass) throws ClassNotFoundException, SQLException {
 		System.out.println(email);
 		System.out.println(pass);
-		Connection con=Connection1.connection();
 		String sql="select email_id,password from userlogin where email_id=? and password=?";
-		PreparedStatement pst=con.prepareStatement(sql);
+		try(Connection con=Connection1.connection();
+				PreparedStatement pst=con.prepareStatement(sql);
+				ResultSet rs=pst.executeQuery();){
 		pst.setString(1, email);
 		pst.setString(2, pass);
-		ResultSet rs=pst.executeQuery();
+		
 		if(rs.next()) {
 			System.out.println("Yes");
 			return true;
@@ -24,5 +25,6 @@ public class LoginDAOImpl implements LoginDAO{
 			System.out.println("NO");
 			return false;
 		}
+	}
 	}
 }

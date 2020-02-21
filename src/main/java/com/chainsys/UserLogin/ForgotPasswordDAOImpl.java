@@ -10,7 +10,9 @@ import com.chainsys.OtherClass.Connection1;
 public class ForgotPasswordDAOImpl implements ForgotPasswordTab1DAO {
 	public String pwdChange(String emailId) throws SQLException, ClassNotFoundException {
 		String characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
-		Connection con=Connection1.connection();
+		String sql="update userlogin set password=? where email_id=?";
+		try(Connection con=Connection1.connection();
+				PreparedStatement pst=con.prepareStatement(sql);){
 		String[] ch=characters.split("");
 		String u="";
 		for(int i=0;i<7;i++) {
@@ -21,20 +23,20 @@ public class ForgotPasswordDAOImpl implements ForgotPasswordTab1DAO {
 				u+=ch[k];
 			}
 		}System.out.println(u);
-		String sql="update userlogin set password=? where email_id=?";
-		PreparedStatement pst=con.prepareStatement(sql);
+		
+		
 		pst.setString(1, u);
 		pst.setString(2, emailId);
 		int rows=pst.executeUpdate();
 		System.out.println("No. of rows updated :"+rows);
+		
 		return u;
+		}
 	}
 	public boolean newPassUpdate(String newPassword,String email) throws ClassNotFoundException, SQLException {
 		String sql="update userlogin set password=? where email_id=?";
 		try(Connection con=Connection1.connection();
 				PreparedStatement pst=con.prepareStatement(sql);){
-		
-		
 		pst.setString(1, newPassword);
 		pst.setString(2, email);
 		int rows=pst.executeUpdate();

@@ -10,13 +10,14 @@ import com.chainsys.OtherClass.Logger;
 
 public class DeleteTab2DAOImpl implements DeleteTab2DAO {
 	public void delRow(String sName) throws SQLException, ClassNotFoundException {
-		Connection con=Connection1.connection();
 		String sql="delete song_list where song_number=?";
+		try(Connection con=Connection1.connection();
+				PreparedStatement pst=con.prepareStatement(sql);){
 		Logger.info(sql);
-		PreparedStatement pst=con.prepareStatement(sql);
 		pst.setString(1, sName);
 		int rows=pst.executeUpdate();
 		Logger.info("No. of songs deleted "+rows);
 		
+	}
 	}
 }
