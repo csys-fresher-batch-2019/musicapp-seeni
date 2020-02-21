@@ -5,21 +5,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import add.*;
+import com.chainsys.OtherClass.Connection1;
 
 public class LoginDAOImpl implements LoginDAO{
 	public boolean login(String email,String pass) throws ClassNotFoundException, SQLException {
-		Connection con=Connection1.connection();
 		System.out.println(email);
 		System.out.println(pass);
+		Connection con=Connection1.connection();
 		String sql="select email_id,password from userlogin where email_id=? and password=?";
 		PreparedStatement pst=con.prepareStatement(sql);
 		pst.setString(1, email);
 		pst.setString(2, pass);
 		ResultSet rs=pst.executeQuery();
 		if(rs.next()) {
+			System.out.println("Yes");
 			return true;
 		}else {
+			System.out.println("NO");
 			return false;
 		}
 	}

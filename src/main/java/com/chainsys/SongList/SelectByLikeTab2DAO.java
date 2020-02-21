@@ -3,7 +3,7 @@ package com.chainsys.SongList;
 import java.sql.SQLException;
 import java.util.List;
 
-import add.SongList;
+import com.chainsys.OtherClass.SongList;
 
 public interface SelectByLikeTab2DAO {
 	

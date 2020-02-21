@@ -1,8 +1,6 @@
 package com.chainsys.SongList;
 
-import java.sql.SQLException;
-
-import add.SongList;
+import com.chainsys.OtherClass.SongList;
 
 public interface InsertTab2DAO {
 	

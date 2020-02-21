@@ -3,8 +3,15 @@ package add;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import com.chainsys.SongList.*;
-import com.chainsys.UserLogin.*;
+import com.chainsys.OtherClass.Logger;
+import com.chainsys.SongList.SearchSongTab2DAO;
+import com.chainsys.SongList.SearchSongTab2DAOImpl;
+import com.chainsys.SongList.SelectByLikeTab2DAO;
+import com.chainsys.SongList.SelectByLikeTab2DAOImpl;
+import com.chainsys.SongList.SongBetweenDatesTab2DAO;
+import com.chainsys.SongList.SongBetweenDatesTab2DAOImpl;
+import com.chainsys.UserLogin.UpdateTab1DAO;
+import com.chainsys.UserLogin.UpdateTab1DAOImpl;
 
 public class Users {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {

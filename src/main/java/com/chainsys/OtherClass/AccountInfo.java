@@ -1,4 +1,4 @@
-package add;
+package com.chainsys.OtherClass;
 
 public class AccountInfo {
 	private String wantsToPrem;

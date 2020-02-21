@@ -1,4 +1,4 @@
-package add;
+package com.chainsys.OtherClass;
 public class Userlogin{
 	private int userId;
 	private String userName;

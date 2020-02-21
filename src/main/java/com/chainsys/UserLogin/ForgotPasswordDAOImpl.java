@@ -5,10 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Random;
 
-import add.Connection1;
+import com.chainsys.OtherClass.Connection1;
 
-public class ForgotPassword {
-	public static String pwdChange(String emailId) throws SQLException, ClassNotFoundException {
+public class ForgotPasswordDAOImpl implements ForgotPasswordTab1DAO {
+	public String pwdChange(String emailId) throws SQLException, ClassNotFoundException {
 		String characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 		Connection con=Connection1.connection();
 		String[] ch=characters.split("");
@@ -38,8 +38,5 @@ public class ForgotPassword {
 		int rows=pst.executeUpdate();
 		System.out.println("No. of rows updated "+rows);
 		return true;
-	}
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-	pwdChange("s@gmail.com");
 	}
 }

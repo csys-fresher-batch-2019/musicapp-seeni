@@ -1,14 +1,15 @@
-package add;
+package com.chainsys.OtherClass;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.Random;
 
 public class Msg91{
-		public static int msg(String number)
+        public static int msg()
     	{
-            String authkey = "316211AGvuCbSI5e35af47P1";
-            String mobiles = number;
+            String authkey = "243477AVOV0jN2Q5bc967d9";
+            String mobiles = "6379434293";
             String senderId = "SEENII";
             String country = "91";
             Random rand=new Random();
@@ -17,6 +18,8 @@ public class Msg91{
             URLConnection myURLConnection=null;
             URL myURL=null;
             BufferedReader reader=null;
+            //String encoded_message=URLEncoder.encode(message);
+           //System.out.println(encoded_message);
             String mainUrl="https://api.msg91.com/api/v2/sendsms?";
             StringBuilder sbPostData= new StringBuilder(mainUrl);
             sbPostData.append("authkey="+authkey);
@@ -34,13 +37,15 @@ public class Msg91{
                 reader= new BufferedReader(new InputStreamReader(myURLConnection.getInputStream()));
                 String response;
                 while ((response = reader.readLine()) != null)
-                	Logger.info(response);
+                System.out.println(response);
                 reader.close();
             }
             catch (IOException e)
             {
-                    Logger.error(e.getMessage());
+                    e.printStackTrace();
             }
             return message;
-        }
+        }public static void main(String[] args) {
+			Msg91.msg();
+		}
 }

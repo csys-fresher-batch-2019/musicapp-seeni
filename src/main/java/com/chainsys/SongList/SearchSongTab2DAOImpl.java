@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import add.*;
+import com.chainsys.OtherClass.Connection1;
+import com.chainsys.OtherClass.Logger;
 
 public class SearchSongTab2DAOImpl implements SearchSongTab2DAO{
 

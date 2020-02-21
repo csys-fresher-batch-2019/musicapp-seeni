@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import add.Connection1;
+import com.chainsys.OtherClass.Connection1;
 
-public class SelectByPremium {
+public class SelectByPremiumDAOImpl {
 	public List<String> premiumMembers(String str) throws SQLException, ClassNotFoundException{
 		String sql="select email_id from userlogin where user_id in (select user_id from account_info where premium=?)";
 		List<String> li=null;
@@ -20,7 +20,7 @@ public class SelectByPremium {
 			li=new ArrayList<>();
 			while(rs.next()) {
 				li.add(rs.getString("email_id"));
-			}System.out.println(li);
+			}
 			
 		}
 		catch(Exception e) {
@@ -28,8 +28,5 @@ public class SelectByPremium {
 		}
 		return li;
 		
-	}public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		SelectByPremium s=new SelectByPremium();
-		s.premiumMembers("Y");
 	}
 }

@@ -1,11 +1,13 @@
 package com.chainsys.SongList;
 
 import java.sql.Connection;
-import add.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import add.SongList;
+import com.chainsys.OtherClass.Connection1;
+import com.chainsys.OtherClass.ErrorConstants;
+import com.chainsys.OtherClass.Logger;
+import com.chainsys.OtherClass.SongList;
 
 public class InsertTab2DAOImpl implements InsertTab2DAO{
 	public boolean insertSong(SongList sl) throws Exception  {

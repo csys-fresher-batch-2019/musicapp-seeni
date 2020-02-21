@@ -1,4 +1,4 @@
-package add;
+package com.chainsys.OtherClass;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,15 +19,12 @@ public class AdminLogin {
 			while(rs.next()) {
 				li.add(rs.getString("email_id"));
 				li.add(rs.getString("password"));
-				
 				return true;
+				
 			}
 			
 		}
 		return false;
 		
-	}public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		boolean res=adminDetails("ramesh@gmail.com", "ramesh12");
-		System.out.println(res);
 	}
 }

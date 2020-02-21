@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import add.*;
+
+import com.chainsys.OtherClass.Connection1;
+import com.chainsys.OtherClass.Logger;
+import com.chainsys.OtherClass.SongList;
 
 public class SelectByLikeTab2DAOImpl implements SelectByLikeTab2DAO {
 	public List<SongList> selectByLikeKey(String str) throws ClassNotFoundException, SQLException {

@@ -2,11 +2,8 @@ package com.chainsys.UserLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
 
-import add.Connection1;
-import add.Logger;
-import add.Msg91;
+import com.chainsys.OtherClass.Connection1;
 
 public class UpdateTab1DAOImpl implements UpdateTab1DAO{
 		public boolean updatePhoneNo(long phNo,String email)  throws ClassNotFoundException, SQLException{

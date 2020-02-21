@@ -2,11 +2,13 @@ package com.chainsys.AccountInfo;
 
 
 import java.sql.Connection;
-import add.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.chainsys.OtherClass.Connection1;
+import com.chainsys.OtherClass.Logger;
 
 public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 	public List<String> accountInfo(String str){
