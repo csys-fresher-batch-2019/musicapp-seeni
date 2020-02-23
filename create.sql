@@ -6,10 +6,9 @@ password varchar2(40) not null
 
 
 
-
+create sequence uid_seq start with 100 increment by 1;
 create table userlogin(
 user_id number not null,
-constraints uid_uk unique(user_id),
 username varchar2(30) not null,
 email_id varchar2(50) not null unique,
 password varchar2(30) not null,
