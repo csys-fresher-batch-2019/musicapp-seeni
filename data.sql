@@ -5,9 +5,9 @@ insert into adminlogin(email_id,password) values('ramesh@gmail.com','ramesh123')
 
 
 
-insert into userlogin(user_id,username,email_id,password,mobile_no) values(101,'SATHISH','s@gmail.com',12345678,9182734579);
-insert into userlogin(user_id,username,email_id,password,mobile_no) values(102,'RAJU','r@gmail.com',87654321,9127287587);
-insert into userlogin(user_id,username,email_id,password,mobile_no) values(103,'RAJ','ra@gmail.com',12676831,9387892572);
+insert into userlogin(user_id,username,email_id,password,mobile_no) values(uid_seq.nextval,'SATHISH','s@gmail.com',12345678,9182734579);
+insert into userlogin(user_id,username,email_id,password,mobile_no) values(uid_seq.nextval,'RAJU','r@gmail.com',87654321,9127287587);
+insert into userlogin(user_id,username,email_id,password,mobile_no) values(uid_seq.nextval,'RAJ','ra@gmail.com',12676831,9387892572);
 
 
 
