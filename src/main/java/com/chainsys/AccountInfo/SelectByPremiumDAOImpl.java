@@ -10,6 +10,12 @@ import java.util.List;
 import com.chainsys.OtherClass.Connection1;
 import com.chainsys.OtherClass.Logger;
 
+
+/**
+ * 
+ * @author seen2380 Displays premium members email-id
+ */
+
 public class SelectByPremiumDAOImpl {
 	public List<String> premiumMembers(String str) throws SQLException, ClassNotFoundException{
 		String sql="select email_id from userlogin where user_id in (select user_id from account_info where premium=?)";

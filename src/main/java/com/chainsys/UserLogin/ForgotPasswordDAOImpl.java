@@ -8,6 +8,12 @@ import java.util.Random;
 import com.chainsys.OtherClass.Connection1;
 
 public class ForgotPasswordDAOImpl implements ForgotPasswordTab1DAO {
+	
+	/**
+	 * Auto generated new password
+	 * 
+	 */
+	
 	Random rand=new Random();
 	public String pwdChange(String emailId) throws SQLException, ClassNotFoundException {
 		String characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";

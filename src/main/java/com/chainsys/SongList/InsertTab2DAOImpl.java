@@ -10,6 +10,12 @@ import com.chainsys.OtherClass.Logger;
 import com.chainsys.OtherClass.SongList;
 
 public class InsertTab2DAOImpl implements InsertTab2DAO{
+	
+	/**
+	 * For insert a new song
+	 */
+
+	
 	public boolean insertSong(SongList sl) throws Exception  {
 		
 		String sql ="insert into song_list(song_number,song_name,music_director,lyricist,singers,movie_name,song_link) "

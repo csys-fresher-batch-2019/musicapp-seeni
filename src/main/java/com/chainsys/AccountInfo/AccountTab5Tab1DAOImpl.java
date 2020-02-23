@@ -10,6 +10,11 @@ import java.util.List;
 import com.chainsys.OtherClass.Connection1;
 import com.chainsys.OtherClass.Logger;
 
+/**
+ * 
+ * @author seen2380 Displays premium members name
+ */
+
 public class AccountTab5Tab1DAOImpl implements AccountTab5Tab1DAO{
 	public List<String> accountInfo(String str){
 		List<String> li=null;

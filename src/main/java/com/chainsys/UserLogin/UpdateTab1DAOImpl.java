@@ -1,24 +1,28 @@
 package com.chainsys.UserLogin;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.chainsys.OtherClass.Connection1;
 
-public class UpdateTab1DAOImpl implements UpdateTab1DAO{
-		public boolean updatePhoneNo(long phNo,String email)  throws ClassNotFoundException, SQLException{
-			String sql="update userlogin set mobile_no=? where email_id=?";
-			try(Connection con=Connection1.connection();
-					PreparedStatement pst=con.prepareStatement(sql);){
-			
-			
+public class UpdateTab1DAOImpl implements UpdateTab1DAO {
+
+	/**
+	 * To update the user mobile number
+	 */
+
+	public boolean updatePhoneNo(long phNo, String email) throws ClassNotFoundException, SQLException {
+		String sql = "update userlogin set mobile_no=? where email_id=?";
+		try (Connection con = Connection1.connection(); PreparedStatement pst = con.prepareStatement(sql);) {
+
 			pst.setLong(1, phNo);
 			pst.setString(2, email);
-			int rows=pst.executeUpdate();
-			System.out.println("No. of rows updated "+rows);
-		pst.close();
-		con.close();
-		return true;
-	}
+			int rows = pst.executeUpdate();
+			System.out.println("No. of rows updated " + rows);
+			pst.close();
+			con.close();
+			return true;
 		}
+	}
 }
