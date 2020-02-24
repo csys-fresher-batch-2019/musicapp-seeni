@@ -39,7 +39,7 @@ song_link varchar2(70) not null
 
 create table userchoice(
 user_id number not null,
-constraints uid_fk foreign key(user_id) references userlogin(user_id),
+--constraints uid_fk foreign key(user_id) references userlogin(user_id),
 song_sequence varchar2(30) default 'SEQUENCE',
 constraints sseq_ck check(song_sequence in ('SHUFFLE ALL','SEQUENCE','REPEAT MODE')),
 song_rating number not null,
@@ -67,7 +67,7 @@ EXPIRY_MONTH NUMBER,
 EXPIRY_YEAR NUMBER,
 --CONSTRAINTS AC_NO_CK CHECK(LENGTH(ACCOUNT_NO)==16),
 USER_ID NUMBER NOT NULL,
-CONSTRAINTS UI_FK FOREIGN KEY(USER_ID) REFERENCES USERLOGIN(USER_ID),
+--CONSTRAINTS UI_FK FOREIGN KEY(USER_ID) REFERENCES USERLOGIN(USER_ID),
 BALANCE NUMBER NOT NULL,
 CONSTRAINTS BAL_CK CHECK(BALANCE>=0),
 RECHARGED_DATE DATE,
