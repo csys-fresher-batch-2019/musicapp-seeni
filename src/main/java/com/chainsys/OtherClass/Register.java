@@ -3,7 +3,6 @@ package com.chainsys.OtherClass;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * Insert the new user account into the database
@@ -23,7 +22,7 @@ public class Register {
 				pst.setString(3, ul.getPassword());
 				pst.setLong(4, ul.getMobileNo());
 				int row = pst.executeUpdate();
-				Logger.getInstanceOf().info(row);
+				Logger.info(row);
 
 			}
 			return true;
